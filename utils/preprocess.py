@@ -44,9 +44,18 @@ def train_model(X, y):
 
     # Evaluate the model
     y_pred = model.predict(X_test)
-    print("Accuracy:", accuracy_score(y_test, y_pred))
-    print("Classification Report:\n", classification_report(y_test, y_pred))
+    accuracy = accuracy_score(y_test, y_pred)
+    report = classification_report(y_test, y_pred, output_dict=True)
+
+    # Save metrics
+    metrics = {
+        "accuracy": accuracy,
+        "classification_report": report
+    }
+    joblib.dump(metrics, "models/model_metrics.pkl")
 
     # Save the trained model
     joblib.dump(model, "models/course_recommendation_model.pkl")
-    print("Model saved as 'course_recommendation_model.pkl'")
+    print("Model and metrics saved successfully")
+    
+    return metrics

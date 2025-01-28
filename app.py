@@ -72,6 +72,21 @@ def retrain():
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+@app.get("/model-metrics")
+def get_model_metrics():
+    try:
+        metrics = joblib.load("models/model_metrics.pkl")
+        return {
+            "accuracy": metrics["accuracy"],
+            "classification_report": metrics["classification_report"],
+            "status": "Model metrics retrieved successfully"
+        }
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=404, 
+            detail="Model metrics not found. Please train the model first."
+        )
+
 # Run the app
 if __name__ == "__main__":
     import uvicorn
