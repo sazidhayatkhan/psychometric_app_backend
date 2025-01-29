@@ -1,5 +1,23 @@
-Q1,Q2,Q3,Q4,Q5,Label
-Reading books,Organizing and planning,Research and learn new information,Quiet and structured,Literature or history,Creative Writing
-Solving puzzles,Analyzing data,Break them down into logical steps,Technical and detail-oriented,Mathematics or science,Data Science
-Socializing with friends,Helping others,Seek advice from others,Collaborative and people-focused,Psychology or sociology,Psychology and Counseling
-Painting or drawing,Designing creative projects,Experiment with creative solutions,Dynamic and innovative,Art or design,Graphic Design
+Q1,Q2,Q3,Q4,Q5,Label,psychometric_inputs,recommended_course,feedback
+Reading books,Organizing and planning,Research and learn new information,Quiet and structured,Literature or history,Creative Writing,,,
+Solving puzzles,Analyzing data,Break them down into logical steps,Technical and detail-oriented,Mathematics or science,Data Science,,,
+Socializing with friends,Helping others,Seek advice from others,Collaborative and people-focused,Psychology or sociology,Psychology and Counseling,,,
+Painting or drawing,Designing creative projects,Experiment with creative solutions,Dynamic and innovative,Art or design,Graphic Design,,,
+,,,,,,"['Reading books', 'Helping others', 'Break them down into logical steps', 'Dynamic and innovative', 'Literature or history']",Creative Writing,
+,,,,,,"['Painting or drawing', 'Designing creative projects', 'Experiment with creative solutions', 'Technical and detail-oriented', 'Mathematics or science']",Graphic Design,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Seek advice from others', 'Collaborative and people-focused', 'Psychology or sociology']",Psychology and Counseling,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Seek advice from others', 'Collaborative and people-focused', 'Psychology or sociology']",Psychology and Counseling,
+,,,,,,"['Reading books', 'Analyzing data', 'Seek advice from others', 'Dynamic and innovative', 'Literature or history']",Creative Writing,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Research and learn new information', 'Quiet and structured', 'Psychology or sociology']",Creative Writing,
+,,,,,,"['Solving puzzles', 'Organizing and planning', 'Break them down into logical steps', 'Quiet and structured', 'Mathematics or science']",Creative Writing,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Seek advice from others', 'Technical and detail-oriented', 'Mathematics or science']",Psychology and Counseling,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Break them down into logical steps', 'Technical and detail-oriented', 'Psychology or sociology']",Psychology and Counseling,
+,,,,,,"['Painting or drawing', 'Designing creative projects', 'Experiment with creative solutions', 'Dynamic and innovative', 'Mathematics or science']",Graphic Design,
+,,,,,,"['Solving puzzles', 'Organizing and planning', 'Experiment with creative solutions', 'Quiet and structured', 'Psychology or sociology']",Creative Writing,
+,,,,,,"['Socializing with friends', 'Helping others', 'Seek advice from others', 'Collaborative and people-focused', 'Psychology or sociology']",Psychology and Counseling,
+,,,,,,"['Painting or drawing', 'Designing creative projects', 'Experiment with creative solutions', 'Dynamic and innovative', 'Literature or history']",Graphic Design,
+,,,,,,"['Solving puzzles', 'Helping others', 'Research and learn new information', 'Collaborative and people-focused', 'Mathematics or science']",Psychology and Counseling,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Break them down into logical steps', 'Technical and detail-oriented', 'Mathematics or science']",Creative Writing,
+,,,,,,"['Solving puzzles', 'Analyzing data', 'Break them down into logical steps', 'Technical and detail-oriented', 'Mathematics or science']",Creative Writing,
+,,,,,,"['Socializing with friends', 'Analyzing data', 'Break them down into logical steps', 'Technical and detail-oriented', 'Mathematics or science']",Psychology and Counseling,
+,,,,,,"['Socializing with friends', 'Analyzing data', 'Research and learn new information', 'Technical and detail-oriented', 'Psychology or sociology']",Psychology and Counseling,

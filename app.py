@@ -12,7 +12,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","http://192.168.0.110:3000"],  # Allow frontend origin
+    allow_origins=["http://localhost:3000", "http://192.168.0.110:3000"],  # Allow frontend origin
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Allow all headers
@@ -86,6 +86,45 @@ def get_model_metrics():
             status_code=404, 
             detail="Model metrics not found. Please train the model first."
         )
+
+# ------------------------------
+# New Endpoint: Save User Interaction
+# ------------------------------
+
+# Path to store CSV
+CSV_FILE = "data/sample_data.csv"
+
+# Ensure CSV exists with proper headers
+if not os.path.exists(CSV_FILE):
+    df = pd.DataFrame(columns=["psychometric_inputs", "recommended_course", "feedback"])
+    df.to_csv(CSV_FILE, index=False)
+
+# Request model for saving user interactions
+class Interaction(BaseModel):
+    psychometric_inputs: list
+    recommended_course: str
+    feedback: str = None  # Optional
+
+@app.post("/save_interaction")
+async def save_interaction(interaction: Interaction):
+    try:
+        # Prepare new row
+        new_data = {
+            "psychometric_inputs": str(interaction.psychometric_inputs),  # Convert list to string for CSV
+            "recommended_course": interaction.recommended_course,
+            "feedback": interaction.feedback or "",  # Default to empty string if no feedback
+        }
+        
+        # Read existing data and append new row
+        df = pd.read_csv(CSV_FILE)
+        df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
+        df.to_csv(CSV_FILE, index=False)
+
+        return {"message": "User interaction saved successfully"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to save interaction: {e}")
+
+# ------------------------------
 
 # Run the app
 if __name__ == "__main__":
